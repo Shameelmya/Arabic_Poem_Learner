@@ -62,7 +62,6 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
                   onClick={() => {
                     if (p.status === 'active') {
                       onSelectPoem(p.id);
-                      onClose();
                     }
                   }}
                   className={`relative p-5 rounded-2xl border transition-all duration-200 cursor-pointer ${
