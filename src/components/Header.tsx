@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors shadow-sm">
         {/* Top Control Bar (Poem Selector & Options Toggles) */}
-        <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 flex items-center justify-between gap-1.5 sm:gap-2 text-xs border-b border-slate-100 dark:border-slate-800/60">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 sm:pt-4 sm:pb-3 flex items-center justify-between gap-1.5 sm:gap-2 text-xs border-b border-slate-100 dark:border-slate-800/60">
           
           {/* Left: Home Button & Poem selector */}
           <div className="flex items-center gap-1.5">
