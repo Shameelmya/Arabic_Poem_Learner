@@ -43,6 +43,7 @@ export const PoemView: React.FC<PoemViewProps> = ({
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
     return (
+      l.id.toString().includes(q) ||
       l.ar.includes(q) ||
       l.words.some((w) => w.ar.includes(q) || w.ml.includes(q) || w.en.toLowerCase().includes(q))
     );
@@ -83,7 +84,7 @@ export const PoemView: React.FC<PoemViewProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={interfaceLang === 'ml' ? "പദമോ അർത്ഥമോ തിരയുക..." : "Search words or lines..."}
+            placeholder={interfaceLang === 'ml' ? "പദമോ അർത്ഥമോ വരി നമ്പറോ തിരയുക..." : "Search words, meaning, or line number..."}
             className="w-full pl-9 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 dark:text-slate-200"
           />
           {searchQuery && (
