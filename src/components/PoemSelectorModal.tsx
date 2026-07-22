@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Check, Plus, Sparkles, X } from 'lucide-react';
+import { BookOpen, Check, X } from 'lucide-react';
 
 interface PoemSelectorModalProps {
   isOpen: boolean;
@@ -26,26 +26,6 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
       versesCount: 48,
       status: 'active',
       badge: 'പ്രധാന കവിത (Active)'
-    },
-    {
-      id: 'wulida-al-huda',
-      titleAr: 'وُلِدَ الهُدى فَالكائيناتُ ضِياءُ',
-      titleMl: 'വുലിദൽ ഹുദാ ഫൽകായിനാതു ദി യാഅ്',
-      poetAr: 'أحمد شوقي',
-      poetMl: 'അഹമ്മദ് ഷൗഖി',
-      versesCount: 30,
-      status: 'coming_soon',
-      badge: 'ഉടൻ വരുന്നു'
-    },
-    {
-      id: 'nahj-al-burda',
-      titleAr: 'ريمٌ عَلى القاعِ بَينَ البانِ وَالعَلَمِ',
-      titleMl: 'നീമുൻ അലൽ ഖാഇ ബയ്നൽ ബാനി വൽ അളമി',
-      poetAr: 'أحمد شوقي',
-      poetMl: 'അഹമ്മദ് ഷൗഖി',
-      versesCount: 25,
-      status: 'coming_soon',
-      badge: 'ഉടൻ വരുന്നു'
     }
   ];
 
@@ -59,8 +39,8 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
               <BookOpen size={20} />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-slate-800 dark:text-white">തിരഞ്ഞെടുക്കുക (Poem Library)</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Select a poem box to start learning</p>
+              <h3 className="font-bold text-lg text-slate-800 dark:text-white">الفصول (Chapters)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Select a chapter to start learning</p>
             </div>
           </div>
           <button
@@ -73,7 +53,6 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
 
         {/* Poem Boxes Grid */}
         <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-          <p className="text-sm font-semibold text-slate-600 dark:text-slate-400">ലഭ്യമായ കവിതകൾ (Available Poems):</p>
           <div className="grid gap-4 sm:grid-cols-2">
             {availablePoems.map((p) => {
               const isSelected = currentPoemId === p.id;
@@ -90,7 +69,7 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
                     isSelected
                       ? 'border-blue-600 bg-blue-50/60 dark:bg-blue-950/40 shadow-md ring-2 ring-blue-500/30'
                       : 'border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-slate-700 bg-white dark:bg-slate-800/60'
-                  } ${p.status !== 'active' ? 'opacity-65 cursor-not-allowed' : ''}`}
+                  }`}
                 >
                   <div className="flex justify-between items-start mb-2">
                     <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${
@@ -119,11 +98,6 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
                 </div>
               );
             })}
-          </div>
-
-          <div className="mt-6 p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200/60 dark:border-amber-800/40 text-amber-900 dark:text-amber-200 text-xs flex items-center gap-3">
-            <Sparkles size={20} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
-            <p>കൂടുതൽ കവിതകൾ ഉടൻ തന്നെ ഇവിടെ ചേർക്കുന്നതായിരിക്കും! നിലവിൽ "قم للمعلم" കവിത പഠിക്കാൻ ലഭ്യമാണ്.</p>
           </div>
         </div>
       </div>
