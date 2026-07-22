@@ -123,51 +123,7 @@ export const PoemView: React.FC<PoemViewProps> = ({
         </span>
       </div>
 
-      {/* Selected Word Active Inspection Bar */}
-      {selectedWord && !isHideMeaning && (
-        <div className="bg-blue-600 text-white rounded-xl p-3 shadow-md flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs animate-in slide-in-from-top-2 duration-200">
-          <div className="flex items-center gap-2.5">
-            <div className="text-2xl font-bold font-arabic amiri-bold bg-white/20 px-3 py-0.5 rounded-lg" dir="rtl">
-              {selectedWord.word.ar}
-            </div>
-            <div>
-              {!isIrabMode && (
-                <div className="space-y-0.5 text-center sm:text-left">
-                  <p className="font-bold text-xs sm:text-sm text-yellow-300">
-                    {selectedWord.word.ml}
-                  </p>
-                  <p className="font-medium text-xs text-blue-100">
-                    {selectedWord.word.en}
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-          {isIrabMode && selectedWord.word.irab && (
-            <div className="text-right sm:text-left text-[11px] p-2 rounded-lg max-w-md w-full sm:w-auto bg-amber-500/30 border border-amber-300" dir="rtl">
-              <span className="font-bold text-amber-300 block font-arabic">الإعراب النحوي:</span>
-              <span className="font-arabic amiri-regular leading-relaxed">{selectedWord.word.irab}</span>
-            </div>
-          )}
-        </div>
-      )}
 
-      {/* Selected Word Bar in Hide Meaning Mode (Arabic & Irab Only) */}
-      {selectedWord && isHideMeaning && (
-        <div className="bg-slate-900 text-white rounded-xl p-3 shadow-md flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs border border-slate-700" dir="rtl">
-          <div className="flex items-center gap-2.5">
-            <div className="text-2xl font-bold font-arabic amiri-bold bg-white/10 px-3 py-0.5 rounded-lg">
-              {selectedWord.word.ar}
-            </div>
-          </div>
-          {selectedWord.word.irab && (
-            <div className="text-right text-xs bg-black/40 p-2.5 rounded-lg max-w-md w-full sm:w-auto">
-              <span className="font-bold text-amber-300 block font-arabic mb-0.5">الإعراب النحوي:</span>
-              <span className="font-arabic amiri-regular leading-relaxed text-slate-200">{selectedWord.word.irab}</span>
-            </div>
-          )}
-        </div>
-      )}
 
       {/* Lines Container - Center Aligned Arabic Verse Layout */}
       <div className="space-y-4 sm:space-y-5">

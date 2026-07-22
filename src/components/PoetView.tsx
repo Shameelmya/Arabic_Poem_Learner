@@ -71,7 +71,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
         <div className="p-4 sm:p-6">
           {langTab === 'ar' ? (
             <div className="text-right space-y-3" dir="rtl">
-              <h3 className="text-lg sm:text-xl font-bold font-arabic amiri-bold text-slate-800 dark:text-slate-100 flex items-center justify-end gap-2">
+              <h3 className="text-lg sm:text-xl font-bold font-arabic amiri-bold text-slate-800 dark:text-slate-100 flex items-center justify-start gap-2">
                 <BookOpen size={18} className="text-blue-600" />
                 <span>السيرة الذاتية المفصلة لأحمد شوقي:</span>
               </h3>

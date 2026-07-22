@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors shadow-sm">
         {/* Top Control Bar (Poem Selector & Options Toggles) */}
-        <div className="max-w-7xl mx-auto px-2.5 sm:px-4 py-1.5 sm:pt-4 sm:pb-3 flex items-center justify-between gap-1.5 sm:gap-2 text-xs border-b border-slate-100 dark:border-slate-800/60">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-4 pt-4 pb-2 sm:pt-4 sm:pb-3 flex items-center justify-between gap-1.5 sm:gap-2 text-xs border-b border-slate-100 dark:border-slate-800/60">
           
           {/* Left: Home Button & Poem selector */}
           <div className="flex items-center gap-1.5">
@@ -170,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
       </header>
 
       {/* Fixed Bottom App Bar for Mobile (screens < 640px) - Icons ONLY */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/90 dark:border-slate-800/90 px-2 py-2 shadow-2xl">
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/90 dark:border-slate-800/90 px-2 pt-2 pb-6 shadow-2xl">
         <div className="flex items-center justify-around max-w-md mx-auto">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;

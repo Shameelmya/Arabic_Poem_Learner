@@ -15,20 +15,22 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSeeChapters }) => {
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-400/20 dark:bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
       
-      <div className="z-10 text-center max-w-3xl flex flex-col items-center space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700 -mt-16 md:-mt-24">
+      <div className="z-10 text-center max-w-3xl flex flex-col items-center justify-center space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700 w-full px-4">
         
         {/* Logo and App Title */}
-        <div className="w-10 h-16 md:w-12 md:h-20 mb-6 overflow-hidden flex items-center justify-center">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNPdGWZBf-5w-PhPW6lrawUlfqGrhYK8IdLaX-cgXLT-NB7GBADblToA&s=10" 
-            alt="Logo" 
-            className="w-full h-full object-cover object-center contrast-150" 
-            style={{ mixBlendMode: 'multiply' }}
-          />
+        <div className="relative flex flex-col items-center justify-center">
+          <div className="w-16 h-28 md:w-20 md:h-32 -mb-8 md:-mb-12 z-0 opacity-90">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNPdGWZBf-5w-PhPW6lrawUlfqGrhYK8IdLaX-cgXLT-NB7GBADblToA&s=10" 
+              alt="Logo" 
+              className="w-full h-full object-cover object-center contrast-150" 
+              style={{ mixBlendMode: 'multiply' }}
+            />
+          </div>
+          <h1 className="relative z-10 font-arabic font-bold text-7xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 leading-tight drop-shadow-sm" dir="rtl">
+            الألوان
+          </h1>
         </div>
-        <h1 className="font-arabic font-bold text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 leading-tight mb-2 py-2 drop-shadow-sm" dir="rtl">
-          الألوان
-        </h1>
         
         {/* Subtitle */}
         <div className="space-y-2 px-6 py-3 md:px-8 md:py-4 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl border border-white/50 dark:border-slate-800/50 shadow-xl shadow-blue-900/5">
@@ -57,7 +59,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSeeChapters }) => {
       </div>
 
       {/* Footer text */}
-      <div className="relative mt-8 md:mt-12 w-full text-center z-10 animate-in fade-in duration-1000 delay-500 flex flex-col items-center justify-center space-y-1.5">
+      <div className="mt-auto pt-16 pb-4 w-full text-center z-10 animate-in fade-in duration-1000 delay-500 flex flex-col items-center justify-center space-y-1.5">
         <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 font-bold tracking-tight uppercase">
           Coordination Of Islamic Colleges
         </p>
