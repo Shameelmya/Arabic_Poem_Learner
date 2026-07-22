@@ -33,16 +33,42 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTab]);
 
+  // Handle Hash-based Routing for Back Button support
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'study') {
+        setCurrentView('study');
+        setIsPoemModalOpen(false);
+      } else if (hash === 'chapters') {
+        // If we are currently in study view and open modal, we keep study view in background
+        setIsPoemModalOpen(true);
+      } else {
+        setCurrentView('home');
+        setIsPoemModalOpen(false);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Check initial hash
+    if (window.location.hash) {
+      handleHashChange();
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const handleSelectPoem = (id: string) => {
     setSelectedPoemId(id);
-    setCurrentView('study');
+    window.location.hash = 'study';
   };
 
   return (
     <div className={`min-h-screen bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-blue-500 selection:text-white ${interfaceLang === 'ml' ? 'font-malayalam' : 'font-english'}`}>
       
       {currentView === 'home' ? (
-        <HomeView onSeeChapters={() => setIsPoemModalOpen(true)} />
+        <HomeView onSeeChapters={() => { window.location.hash = 'chapters'; }} />
       ) : (
         <>
           {/* macOS Header Navigation */}
@@ -58,8 +84,8 @@ export default function App() {
             isHideMeaning={isHideMeaning}
             setIsHideMeaning={setIsHideMeaning}
             selectedPoemTitle={poemData.titleAr}
-            onOpenPoemModal={() => setIsPoemModalOpen(true)}
-            onGoHome={() => setCurrentView('home')}
+            onOpenPoemModal={() => { window.location.hash = 'chapters'; }}
+            onGoHome={() => { window.location.hash = ''; }}
           />
 
           {/* Main Content Viewport */}
@@ -99,7 +125,13 @@ export default function App() {
       {/* Poem Selector Modal */}
       <PoemSelectorModal
         isOpen={isPoemModalOpen}
-        onClose={() => setIsPoemModalOpen(false)}
+        onClose={() => {
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.hash = currentView === 'study' ? 'study' : '';
+          }
+        }}
         currentPoemId={selectedPoemId}
         onSelectPoem={handleSelectPoem}
       />

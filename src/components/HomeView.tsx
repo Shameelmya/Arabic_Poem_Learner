@@ -61,7 +61,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSeeChapters }) => {
 
       {/* Footer text */}
       <div className="mt-auto md:mt-16 mb-24 md:mb-16 pt-12 md:pt-0 w-full text-center z-10 animate-in fade-in duration-1000 delay-500 flex flex-col items-center justify-center space-y-1.5">
-        <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 font-bold tracking-tight uppercase">
+        <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 font-bold tracking-tight uppercase">
           Coordination Of Islamic Colleges
         </p>
         <a 
