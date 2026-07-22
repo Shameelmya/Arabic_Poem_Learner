@@ -18,7 +18,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSeeChapters }) => {
       <div className="z-10 text-center max-w-3xl flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
         
         {/* Logo and App Title */}
-        <img src="https://www.wafycic.com/front_end/img/logo.jpg" alt="Logo" className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border-2 border-white/50 dark:border-slate-800/50 mb-4" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNPdGWZBf-5w-PhPW6lrawUlfqGrhYK8IdLaX-cgXLT-NB7GBADblToA&s=10" alt="Logo" className="w-auto h-20 md:h-28 mb-4 object-contain drop-shadow-sm" />
         <h1 className="font-arabic font-bold text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 leading-tight mb-2 py-2 drop-shadow-sm" dir="rtl">
           الألوان
         </h1>
