@@ -19,11 +19,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSeeChapters }) => {
         
         {/* Logo and App Title */}
         <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center overflow-hidden bg-white rounded-full p-2">
+          <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center overflow-hidden bg-white rounded-full p-2">
             <img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNPdGWZBf-5w-PhPW6lrawUlfqGrhYK8IdLaX-cgXLT-NB7GBADblToA&s=10" 
+              src="/logo.png" 
               alt="Logo" 
-              className="w-full h-full object-contain contrast-150 mix-blend-multiply" 
+              className="w-full h-full object-contain" 
             />
           </div>
           <h1 className="font-arabic font-bold text-7xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 leading-normal pt-4 pb-2 drop-shadow-sm" dir="rtl">
