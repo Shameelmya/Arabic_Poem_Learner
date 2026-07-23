@@ -18,16 +18,6 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
 
   const availablePoems = [
     {
-      id: 'qum-lil-muallimi',
-      titleAr: 'قُم لِلمُعَلِّمِ وَفِّهِ التَبجيلا',
-      titleMl: 'ഖും ലിൽ മുഅല്ലിമി വഫ്ഫിഹി തബ്ജീലാ',
-      poetAr: 'أحمد شوقي',
-      poetMl: 'അഹമ്മദ് ഷൗഖി',
-      versesCount: 132,
-      status: 'active',
-      badge: 'പ്രധാന കവിത (Active)'
-    },
-    {
       id: 'shafiee-da-al-ayyam',
       titleAr: 'دَعِ الأَيَّامَ تَفْعَل مَا تَشَاءُ',
       titleMl: 'ദഇൽ അയ്യാമ തഫ്അൽ മാ തശാഉ',

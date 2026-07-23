@@ -19,7 +19,7 @@ export default function App() {
   const [isIrabMode, setIsIrabMode] = useState<boolean>(false);
   const [isHideMeaning, setIsHideMeaning] = useState<boolean>(false);
   const [isPoemModalOpen, setIsPoemModalOpen] = useState<boolean>(false);
-  const [selectedPoemId, setSelectedPoemId] = useState<string>('qum-lil-muallimi');
+  const [selectedPoemId, setSelectedPoemId] = useState<string>('shafiee-da-al-ayyam');
   const bundle = getPoemBundle(selectedPoemId);
   const poemData = bundle.poem;
 
