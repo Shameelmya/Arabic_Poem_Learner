@@ -295,6 +295,7 @@ export const questionsData: QuestionItem[] = [
     answerMl: "മനുഷ്യ മനസ്സുകളെയും ബുദ്ധിയെയും വളർത്തുന്നവനനേക്കാൾ ശ്രേഷ്ഠനായ മറ്റാരുമില്ല എന്ന് നിഷേധാത്മകമായി ഉറപ്പിച്ചു പറയുന്ന ചോദ്യശൈലി (استفهام إنكاري غرضه النفي).",
     answerEn: "Disapproving / Rhetorical Negation (Istifham Inkari for negation and affirmation): It emphatically declares that there is absolutely no one more noble than the educator who builds minds and souls.",
     category: "البلاغة والتذوق"
+  },
   // Additional Questions to reach 25
   {
     id: 17,
