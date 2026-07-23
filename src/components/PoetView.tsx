@@ -24,7 +24,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
             <div className="text-center md:text-right w-full" dir="rtl">
               <div className="inline-flex items-center gap-1.5 px-3 py-0.5 bg-white/10 backdrop-blur-md rounded-full text-[11px] font-semibold mb-2 border border-white/20 text-blue-200">
                 <Award size={13} />
-                <span className="font-arabic amiri-bold">أمير الشعراء ({interfaceLang === 'ml' ? 'കവികളുടെ രാജാവ്' : 'Prince of Poets'})</span>
+                <span className="font-arabic amiri-bold">{data.badgeAr} ({interfaceLang === 'ml' ? data.badgeMl : data.badgeEn})</span>
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-arabic amiri-bold mb-1">{data.nameAr}</h1>
               <h2 className="text-base sm:text-lg text-blue-200 font-semibold mb-3" dir="ltr">
@@ -34,11 +34,11 @@ export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
               <div className="flex flex-wrap justify-center md:justify-start gap-2 text-xs font-medium">
                 <span className="px-2.5 py-1 bg-white/10 rounded-lg backdrop-blur-sm border border-white/10 flex items-center gap-1 text-[11px]">
                   <Calendar size={12} />
-                  <span>1868 - 1932 م</span>
+                  <span>{data.dates}</span>
                 </span>
                 <span className="px-2.5 py-1 bg-white/10 rounded-lg backdrop-blur-sm border border-white/10 flex items-center gap-1 text-[11px]">
                   <MapPin size={12} />
-                  <span>القاهرة، مصر (Cairo, Egypt)</span>
+                  <span>{data.location}</span>
                 </span>
               </div>
             </div>
@@ -73,7 +73,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
             <div className="text-right space-y-3" dir="rtl">
               <h3 className="text-lg sm:text-xl font-bold font-arabic amiri-bold text-slate-800 dark:text-slate-100 flex items-center justify-start gap-2">
                 <BookOpen size={18} className="text-blue-600" />
-                <span>السيرة الذاتية المفصلة لأحمد شوقي:</span>
+                <span>السيرة الذاتية المفصلة للشاعر:</span>
               </h3>
               <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-arabic amiri-regular text-lg sm:text-xl text-justify whitespace-pre-line">
                 {data.bioAr}
@@ -84,7 +84,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
               <h3 className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
                 <BookOpen size={18} className="text-blue-600" />
                 <span>
-                  {interfaceLang === 'ml' ? 'കവിയുടെ വിശദമായ ജീവചരിത്രം:' : 'Detailed Biography of Ahmed Shawqi:'}
+                  {interfaceLang === 'ml' ? 'കവിയുടെ വിശദമായ ജീവചരിത്രം:' : 'Detailed Biography of the Poet:'}
                 </span>
               </h3>
               <p className="text-slate-800 dark:text-slate-200 leading-relaxed text-xs sm:text-sm font-medium whitespace-pre-line">
@@ -101,8 +101,8 @@ export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
           <Sparkles size={16} className="text-blue-600" />
           <span>
             {interfaceLang === 'ml'
-              ? 'അഹമ്മദ് ഷൗഖിയുടെ ജീവിതത്തിലെ നാഴികക്കല്ലുകൾ:'
-              : 'Key Biographical Milestones of Ahmed Shawqi:'}
+              ? 'കവിയുടെ ജീവിതത്തിലെ നാഴികക്കല്ലുകൾ:'
+              : 'Key Biographical Milestones of the Poet:'}
           </span>
         </h3>
 

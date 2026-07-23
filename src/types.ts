@@ -105,6 +105,11 @@ export interface PoetData {
   nameAr: string;
   nameMl: string;
   nameEn: string;
+  badgeAr: string;
+  badgeMl: string;
+  badgeEn: string;
+  dates: string;
+  location: string;
   bioAr: string;
   bioMl: string;
   bioEn: string;
