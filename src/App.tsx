@@ -120,7 +120,7 @@ export default function App() {
                 </span>
               </div>
               <p className="font-arabic amiri-bold text-sm" dir="rtl">
-                قُم لِلمُعَلِّمِ وَفِّهِ التَبجيلا كادَ المُعَلِّمُ أَن يَكونَ رَسولا
+                دَعِ الأَيَّامَ تَفْعَل مَا تَشَاءُ وَطِب نَفْساً إِذَا حَكَمَ القَضَاءُ
               </p>
             </div>
           </footer>
