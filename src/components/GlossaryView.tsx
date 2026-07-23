@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { glossaryData } from '../data/glossaryData';
 import { List, Search } from 'lucide-react';
 
 interface GlossaryViewProps {
   interfaceLang?: 'ml' | 'en';
 }
 
-export const GlossaryView: React.FC<GlossaryViewProps> = ({ interfaceLang = 'ml' }) => {
+export const GlossaryView: React.FC<GlossaryViewProps> = ({ data, interfaceLang }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('all');
 
-  const filteredItems = glossaryData.filter((item) => {
+  const filteredItems = data.filter((item) => {
     const matchesSearch =
       item.wordAr.includes(searchTerm) ||
       item.meaningMl.includes(searchTerm) ||

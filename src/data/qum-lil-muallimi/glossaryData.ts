@@ -1,4 +1,4 @@
-import { GlossaryItem } from '../types';
+import { GlossaryItem } from '../../types';
 
 export const glossaryData: GlossaryItem[] = [
   { id: 1, wordAr: "قُم", rootAr: "قوم", meaningMl: "എഴുന്നേൽക്കുക", meaningEn: "Stand up", typeAr: "فعل أمر", exampleLineNumber: 1 },

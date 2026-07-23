@@ -82,12 +82,50 @@ export interface Poem {
   id: string;
   titleAr: string;
   titleMl: string;
-  titleEn: string;
+  titleEn?: string;
   poetAr: string;
   poetMl: string;
-  meter: string; // البحر الشعري (e.g. البحر الكامل)
+  meter?: string;
   totalLines: number;
   lines: PoemLine[];
   couplets: CoupletSummary[];
-  sections: SectionSummary[];
+  sections?: SectionSummary[];
+}
+
+export interface PoemBundle {
+  poem: Poem;
+  questions: QuestionItem[];
+  glossary: GlossaryItem[];
+  balagha: BalaghaItem[];
+  essay: EssayData;
+  poet: PoetData;
+}
+
+export interface PoetData {
+  nameAr: string;
+  nameMl: string;
+  nameEn: string;
+  bioAr: string;
+  bioMl: string;
+  bioEn: string;
+  facts: {
+    titleAr: string;
+    descAr: string;
+    titleMl: string;
+    descMl: string;
+    titleEn: string;
+    descEn: string;
+  }[];
+  worksAr: string[];
+  worksMl: string[];
+  worksEn: string[];
+}
+
+export interface EssayData {
+  arTitle: string;
+  mlTitle: string;
+  enTitle: string;
+  arEssay: string;
+  mlEssay: string;
+  enEssay: string;
 }

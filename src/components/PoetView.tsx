@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { poetData } from '../data/poetData';
+import { PoetData } from '../types';
 import { User, Award, Calendar, MapPin, BookOpen, Feather, Sparkles } from 'lucide-react';
 
 interface PoetViewProps {
   interfaceLang?: 'ml' | 'en';
 }
 
-export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
+export const PoetView: React.FC<PoetViewProps> = ({ data, interfaceLang }) => {
   const [langTab, setLangTab] = useState<'ar' | 'translation'>('ar');
 
   return (
@@ -26,9 +26,9 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
                 <Award size={13} />
                 <span className="font-arabic amiri-bold">أمير الشعراء ({interfaceLang === 'ml' ? 'കവികളുടെ രാജാവ്' : 'Prince of Poets'})</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-arabic amiri-bold mb-1">{poetData.nameAr}</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-arabic amiri-bold mb-1">{data.nameAr}</h1>
               <h2 className="text-base sm:text-lg text-blue-200 font-semibold mb-3" dir="ltr">
-                {interfaceLang === 'ml' ? poetData.nameMl : poetData.nameEn}
+                {interfaceLang === 'ml' ? data.nameMl : data.nameEn}
               </h2>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-2 text-xs font-medium">
@@ -76,7 +76,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
                 <span>السيرة الذاتية المفصلة لأحمد شوقي:</span>
               </h3>
               <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-arabic amiri-regular text-lg sm:text-xl text-justify whitespace-pre-line">
-                {poetData.bioAr}
+                {data.bioAr}
               </p>
             </div>
           ) : (
@@ -88,7 +88,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
                 </span>
               </h3>
               <p className="text-slate-800 dark:text-slate-200 leading-relaxed text-xs sm:text-sm font-medium whitespace-pre-line">
-                {interfaceLang === 'ml' ? poetData.bioMl : poetData.bioEn}
+                {interfaceLang === 'ml' ? data.bioMl : data.bioEn}
               </p>
             </div>
           )}
@@ -107,7 +107,7 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
         </h3>
 
         <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
-          {poetData.facts.map((fact, idx) => (
+          {data.facts.map((fact, idx) => (
             <div
               key={idx}
               className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-2"
@@ -146,13 +146,13 @@ export const PoetView: React.FC<PoetViewProps> = ({ interfaceLang = 'ml' }) => {
         </h3>
 
         <div className="grid md:grid-cols-2 gap-2.5">
-          {poetData.worksAr.map((workAr, idx) => (
+          {data.worksAr.map((workAr, idx) => (
             <div
               key={idx}
               className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between text-xs"
             >
               <span className="font-medium text-slate-700 dark:text-slate-300" dir="ltr">
-                {interfaceLang === 'ml' ? poetData.worksMl[idx] : poetData.worksEn[idx]}
+                {interfaceLang === 'ml' ? data.worksMl[idx] : data.worksEn[idx]}
               </span>
               <span className="font-arabic amiri-bold text-base text-blue-700 dark:text-blue-400" dir="rtl">
                 {workAr}

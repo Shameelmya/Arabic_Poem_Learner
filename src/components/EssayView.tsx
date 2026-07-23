@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { essayData } from '../data/essayData';
 import { FileText, Copy, Check, Globe } from 'lucide-react';
 
 interface EssayViewProps {
   interfaceLang?: 'ml' | 'en';
 }
 
-export const EssayView: React.FC<EssayViewProps> = ({ interfaceLang = 'ml' }) => {
+export const EssayView: React.FC<EssayViewProps> = ({ data, interfaceLang }) => {
   const [copiedLang, setCopiedLang] = useState<string | null>(null);
 
   const copyEssay = (text: string, lang: string) => {
@@ -15,8 +14,8 @@ export const EssayView: React.FC<EssayViewProps> = ({ interfaceLang = 'ml' }) =>
     setTimeout(() => setCopiedLang(null), 2000);
   };
 
-  const currentEssayText = interfaceLang === 'ml' ? essayData.mlEssay : essayData.enEssay;
-  const currentTitleText = interfaceLang === 'ml' ? essayData.mlTitle : essayData.enTitle;
+  const currentEssayText = interfaceLang === 'ml' ? data.mlEssay : data.enEssay;
+  const currentTitleText = interfaceLang === 'ml' ? data.mlTitle : data.enTitle;
 
   return (
     <div className="space-y-6 sm:space-y-8 pb-20">
@@ -75,7 +74,7 @@ export const EssayView: React.FC<EssayViewProps> = ({ interfaceLang = 'ml' }) =>
         <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-4">
           <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
             <button
-              onClick={() => copyEssay(essayData.arEssay, 'ar')}
+              onClick={() => copyEssay(data.arEssay, 'ar')}
               className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors"
               title="Copy Essay"
             >
@@ -88,14 +87,14 @@ export const EssayView: React.FC<EssayViewProps> = ({ interfaceLang = 'ml' }) =>
           </div>
 
           <h3 className="text-lg sm:text-xl font-bold font-arabic amiri-bold text-slate-800 dark:text-slate-100 leading-relaxed text-right" dir="rtl">
-            {essayData.arTitle}
+            {data.arTitle}
           </h3>
 
           <div
             className="text-slate-800 dark:text-slate-200 font-arabic amiri-regular text-sm sm:text-base leading-relaxed space-y-3 text-right text-justify"
             dir="rtl"
             dangerouslySetInnerHTML={{
-              __html: essayData.arEssay
+              __html: data.arEssay
                 .replace(/### (.*?)\n/g, '<h4 class="font-bold text-base sm:text-lg text-blue-700 dark:text-blue-400 mt-4 mb-1.5 font-arabic amiri-bold">$1</h4>')
                 .replace(/\*\*(.*?)\*\*/g, '<strong class="text-blue-800 dark:text-blue-300 font-bold font-arabic amiri-bold">$1</strong>')
                 .replace(/\n\n/g, '<br/><br/>'),

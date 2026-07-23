@@ -26,6 +26,16 @@ export const PoemSelectorModal: React.FC<PoemSelectorModalProps> = ({
       versesCount: 132,
       status: 'active',
       badge: 'പ്രധാന കവിത (Active)'
+    },
+    {
+      id: 'shafiee-da-al-ayyam',
+      titleAr: 'دَعِ الأَيَّامَ تَفْعَل مَا تَشَاءُ',
+      titleMl: 'ദഇൽ അയ്യാമ തഫ്അൽ മാ തശാഉ',
+      poetAr: 'الإمام الشافعي',
+      poetMl: 'ഇമാം ശാഫിഈ',
+      versesCount: 26,
+      status: 'active',
+      badge: 'പുതിയത് (New)'
     }
   ];
 

@@ -1,4 +1,4 @@
-import { QuestionItem } from '../types';
+import { QuestionItem } from '../../types';
 
 export const questionsData: QuestionItem[] = [
   // MCQs

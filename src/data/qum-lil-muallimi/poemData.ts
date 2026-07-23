@@ -1,4 +1,4 @@
-import { Poem, PoemLine, CoupletSummary, SectionSummary } from '../types';
+import { Poem, PoemLine, CoupletSummary, SectionSummary } from '../../types';
 
 // Helper function to build word objects easily
 function parseLineWords(

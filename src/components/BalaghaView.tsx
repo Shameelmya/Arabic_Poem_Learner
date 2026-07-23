@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { balaghaData } from '../data/balaghaData';
 import { Feather, BookOpen } from 'lucide-react';
 
 interface BalaghaViewProps {
   interfaceLang?: 'ml' | 'en';
 }
 
-export const BalaghaView: React.FC<BalaghaViewProps> = ({ interfaceLang = 'ml' }) => {
+export const BalaghaView: React.FC<BalaghaViewProps> = ({ data, interfaceLang }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const categories = [
@@ -19,7 +18,7 @@ export const BalaghaView: React.FC<BalaghaViewProps> = ({ interfaceLang = 'ml' }
     { id: 'أسلوب', labelMl: 'أسلوب الأمر (Imperative)', labelEn: 'Imperatives' },
   ];
 
-  const filteredItems = balaghaData.filter((b) => {
+  const filteredItems = data.filter((b) => {
     if (selectedCategory === 'all') return true;
     return b.category === selectedCategory;
   });

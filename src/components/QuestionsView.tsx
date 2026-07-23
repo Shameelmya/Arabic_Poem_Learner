@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { questionsData } from '../data/questionsData';
 import { Award, BookOpen, CheckCircle, ChevronDown, ChevronUp, RotateCcw, XCircle } from 'lucide-react';
 
 interface QuestionsViewProps {
   interfaceLang?: 'ml' | 'en';
 }
 
-export const QuestionsView: React.FC<QuestionsViewProps> = ({ interfaceLang = 'ml' }) => {
+export const QuestionsView: React.FC<QuestionsViewProps> = ({ data, interfaceLang }) => {
   const [filterType, setFilterType] = useState<string>('all');
   const [selectedAnswers, setSelectedAnswers] = useState<{ [qId: number]: number }>({});
   const [expandedDescriptive, setExpandedDescriptive] = useState<{ [qId: number]: boolean }>({});
@@ -19,14 +18,14 @@ export const QuestionsView: React.FC<QuestionsViewProps> = ({ interfaceLang = 'm
     setExpandedDescriptive((prev) => ({ ...prev, [qId]: !prev[qId] }));
   };
 
-  const filteredQuestions = questionsData.filter((q) => {
+  const filteredQuestions = data.filter((q) => {
     if (filterType === 'mcq') return q.type === 'mcq';
     if (filterType === 'descriptive') return q.type === 'descriptive';
     if (filterType === 'grammar') return q.type === 'grammar';
     return true;
   });
 
-  const mcqQuestions = questionsData.filter((q) => q.type === 'mcq');
+  const mcqQuestions = data.filter((q) => q.type === 'mcq');
   const answeredCount = Object.keys(selectedAnswers).length;
   const correctCount = mcqQuestions.reduce((acc, q) => {
     if (selectedAnswers[q.id] === q.correctOptionIndex) return acc + 1;

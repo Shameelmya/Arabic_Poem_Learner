@@ -1,4 +1,4 @@
-import { BalaghaItem } from '../types';
+import { BalaghaItem } from '../../types';
 
 export const balaghaData: BalaghaItem[] = [
   {

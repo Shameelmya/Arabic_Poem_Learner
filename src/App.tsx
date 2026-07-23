@@ -8,9 +8,10 @@ import { GlossaryView } from './components/GlossaryView';
 import { EssayView } from './components/EssayView';
 import { PoemSelectorModal } from './components/PoemSelectorModal';
 import { HomeView } from './components/HomeView';
-import { poemData } from './data/poemData';
+import { getPoemBundle } from './data/registry';
 
 export default function App() {
+  
   const [currentView, setCurrentView] = useState<'home' | 'study'>('home');
   const [activeTab, setActiveTab] = useState<string>('poem');
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -19,6 +20,10 @@ export default function App() {
   const [isHideMeaning, setIsHideMeaning] = useState<boolean>(false);
   const [isPoemModalOpen, setIsPoemModalOpen] = useState<boolean>(false);
   const [selectedPoemId, setSelectedPoemId] = useState<string>('qum-lil-muallimi');
+  const bundle = getPoemBundle(selectedPoemId);
+  const poemData = bundle.poem;
+
+  
 
   useEffect(() => {
     if (darkMode) {
@@ -98,11 +103,11 @@ export default function App() {
                 isHideMeaning={isHideMeaning}
               />
             )}
-            {activeTab === 'qa' && <QuestionsView interfaceLang={interfaceLang} />}
-            {activeTab === 'poet' && <PoetView interfaceLang={interfaceLang} />}
-            {activeTab === 'balagha' && <BalaghaView interfaceLang={interfaceLang} />}
-            {activeTab === 'glossary' && <GlossaryView interfaceLang={interfaceLang} />}
-            {activeTab === 'essay' && <EssayView interfaceLang={interfaceLang} />}
+            {activeTab === 'qa' && <QuestionsView data={bundle.questions} interfaceLang={interfaceLang} />}
+            {activeTab === 'poet' && <PoetView data={bundle.poet} interfaceLang={interfaceLang} />}
+            {activeTab === 'balagha' && <BalaghaView data={bundle.balagha} interfaceLang={interfaceLang} />}
+            {activeTab === 'glossary' && <GlossaryView data={bundle.glossary} interfaceLang={interfaceLang} />}
+            {activeTab === 'essay' && <EssayView data={bundle.essay} interfaceLang={interfaceLang} />}
           </main>
 
           {/* Footer */}
